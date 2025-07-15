@@ -11,7 +11,7 @@ const NotificationBell = () => {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const res = await axios.get("http://localhost:5002/api/notifications", {
+        const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/notifications", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setNotifications(res.data);

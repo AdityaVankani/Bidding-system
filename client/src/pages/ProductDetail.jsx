@@ -15,7 +15,7 @@ const ProductDetail = () => {
 
   const fetchProduct = async (timestamp = "") => {
   try {
-    const res = await axios.get(`http://localhost:5002/api/products/${id}?t=${timestamp}`);
+    const res = await axios.get(`https://bidding-system-6vjf.onrender.com/api/products/${id}?t=${timestamp}`);
     setProduct(res.data);
   } catch (err) {
     console.error("Error fetching product:", err);
@@ -30,7 +30,7 @@ const ProductDetail = () => {
   const handleBidSubmit = async (amount) => {
     try {
       const res = await axios.post(
-        "http://localhost:5002/api/bids",
+        "https://bidding-system-6vjf.onrender.com/api/bids",
         {
           productId: product._id,
           bidAmount: amount,

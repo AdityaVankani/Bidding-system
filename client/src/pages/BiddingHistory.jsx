@@ -58,7 +58,7 @@ const BiddingHistory = () => {
       setLoading(true);
       console.log('Fetching bids with token:', token ? 'Token exists' : 'No token');
       
-      const res = await axios.get("http://localhost:5002/api/bids/my-bids", {
+      const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/bids/my-bids", {
         headers: { 
           Authorization: `Bearer ${token}`,
           'Cache-Control': 'no-cache',

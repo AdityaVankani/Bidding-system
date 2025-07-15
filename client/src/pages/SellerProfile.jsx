@@ -134,10 +134,10 @@ const SellerProfile = () => {
       
       try {
         const [sellerRes, productsRes] = await Promise.all([
-          axios.get("http://localhost:5002/api/auth/me", {
+          axios.get("https://bidding-system-6vjf.onrender.com/api/auth/me", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:5002/api/products/my-listed", {
+          axios.get("https://bidding-system-6vjf.onrender.com/api/products/my-listed", {
             headers: { Authorization: `Bearer ${token}` },
           })
         ]);
@@ -256,7 +256,7 @@ const SellerProfile = () => {
     try {
       setLoading(true);
       const res = await axios.put(
-        'http://localhost:5002/api/user/update',
+        'https://bidding-system-6vjf.onrender.com/api/user/update',
         formData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -354,7 +354,7 @@ const SellerProfile = () => {
       if (productForm._id) {
         // Update existing product
         const res = await axios.put(
-          `http://localhost:5002/api/products/${productForm._id}`,
+          `https://bidding-system-6vjf.onrender.com/api/products/${productForm._id}`,
           productData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -371,7 +371,7 @@ const SellerProfile = () => {
       } else {
         // Add new product
         const res = await axios.post(
-          'http://localhost:5002/api/products',
+          'https://bidding-system-6vjf.onrender.com/api/products',
           productData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -418,7 +418,7 @@ const SellerProfile = () => {
     try {
       setLoading(true);
       const res = await axios.put(
-        `http://localhost:5002/api/products/${productId}`,
+        `https://bidding-system-6vjf.onrender.com/api/products/${productId}`,
         updates,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -458,7 +458,7 @@ const SellerProfile = () => {
     try {
       setLoading(true);
       await axios.delete(
-        `http://localhost:5002/api/products/${productId}`,
+        `https://bidding-system-6vjf.onrender.com/api/products/${productId}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 

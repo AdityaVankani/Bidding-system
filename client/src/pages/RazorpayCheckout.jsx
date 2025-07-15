@@ -52,7 +52,7 @@ const RazorpayCheckout = () => {
 
         // Fetch bid and product details
         const [bidResponse, userResponse] = await Promise.all([
-          axios.get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002'}/api/bids/${bidId}`, {
+          axios.get(`${import.meta.env.VITE_API_BASE_URL || 'https://bidding-system-6vjf.onrender.com'}/api/bids/${bidId}`, {
             headers: { 
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ const RazorpayCheckout = () => {
             console.error('Error fetching bid:', err);
             throw new Error('Failed to load bid details. Please try again later.');
           }),
-          axios.get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002'}/api/users/me`, {
+          axios.get(`${import.meta.env.VITE_API_BASE_URL || 'https://bidding-system-6vjf.onrender.com'}/api/users/me`, {
             headers: { 
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json'
@@ -136,7 +136,7 @@ const RazorpayCheckout = () => {
       let orderResponse;
       try {
         orderResponse = await axios.post(
-          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:5002'}/api/payments/create-order`,
+          `${import.meta.env.VITE_API_BASE_URL || 'https://bidding-system-6vjf.onrender.com'}/api/payments/create-order`,
           { 
             bidId: bid._id,
             amount: product.amount * 100, // Convert to paise

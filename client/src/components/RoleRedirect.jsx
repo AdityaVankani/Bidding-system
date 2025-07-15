@@ -9,7 +9,7 @@ const RoleRedirect = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5002/api/auth/me", {
+        const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/auth/me", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

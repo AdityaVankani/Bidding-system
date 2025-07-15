@@ -221,7 +221,7 @@ const Dashboard = () => {
         }
 
         console.log('Fetching user data...');
-        const res = await axios.get("http://localhost:5002/api/auth/me", {
+        const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -233,13 +233,13 @@ const Dashboard = () => {
           try {
             console.log('Fetching bids and analysis data in parallel...');
             const [bidsRes, analysisRes] = await Promise.all([
-              axios.get("http://localhost:5002/api/bids/my-bids", {
+              axios.get("https://bidding-system-6vjf.onrender.com/api/bids/my-bids", {
                 headers: { Authorization: `Bearer ${token}` },
               }).catch(err => {
                 console.error('Error fetching bids:', err.response?.data || err.message);
                 throw err;
               }),
-              axios.get("http://localhost:5002/api/dashboard/analysis", {
+              axios.get("https://bidding-system-6vjf.onrender.com/api/dashboard/analysis", {
                 headers: { Authorization: `Bearer ${token}` },
               }).catch(err => {
                 console.error('Error fetching analysis:', err.response?.data || err.message);
@@ -302,10 +302,10 @@ const Dashboard = () => {
           }
         } else if (res.data.role === "seller") {
           const [productsRes, winnersRes] = await Promise.all([
-            axios.get("http://localhost:5002/api/products/my-listed", {
+            axios.get("https://bidding-system-6vjf.onrender.com/api/products/my-listed", {
               headers: { Authorization: `Bearer ${token}` },
             }),
-            axios.get("http://localhost:5002/api/dashboard/my-winners", {
+            axios.get("https://bidding-system-6vjf.onrender.com/api/dashboard/my-winners", {
               headers: { Authorization: `Bearer ${token}` },
             }),
           ]);

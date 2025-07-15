@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5002/api/products");
+        const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/products");
         setProducts(res.data);
       } catch (err) {
         console.error("Error fetching products:", err);

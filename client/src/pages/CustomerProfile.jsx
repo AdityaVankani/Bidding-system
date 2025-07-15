@@ -11,7 +11,7 @@ const CustomerProfile = () => {
   const fetchProfile = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5002/api/auth/me", {
+      const res = await axios.get("https://bidding-system-6vjf.onrender.com/api/auth/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUser(res.data);
@@ -62,7 +62,7 @@ const CustomerProfile = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token");
-      await axios.put("http://localhost:5002/api/user/update", formData, {
+      await axios.put("https://bidding-system-6vjf.onrender.com/api/user/update", formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessage("Profile updated successfully!");
