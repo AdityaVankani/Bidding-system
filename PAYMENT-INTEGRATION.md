@@ -14,7 +14,7 @@ This document provides instructions for setting up and using the Razorpay paymen
      ```env
      VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
      VITE_RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-     VITE_API_BASE_URL=http://localhost:5002/api
+     VITE_API_BASE_URL=https://bidding-system-6vjf.onrender.com/api
      ```
 
 ## Backend Setup
